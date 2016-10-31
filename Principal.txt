@@ -1,0 +1,77 @@
+
+package TrabalandocomString;
+import java.util.ArrayList;
+  import java.util.List;
+
+import javax.swing.JOptionPane;
+
+
+public class Principal {
+ 
+    public static void main(String[] args) {
+        
+          String a="";
+     Principal f = new Principal();
+      Pessoa p = new Pessoa();
+      ValidaCPF cpf = new ValidaCPF();
+    //  String nome = JOptionPane.showInputDialog(null,"Digite seu nome: " , "Entrada",3);
+      //p.setNome(nome);
+      
+        for (int i = 0; i < 2; i++) {
+                System.out.println("aqui");
+            
+
+           try {
+               while (true) {                
+              
+               p.setNome(JOptionPane.showInputDialog(null,"Digite seu nome completo: ","Entrada de dados",1));
+               char c = p.getNome().charAt(0);   
+                  if (p.getNome() != null && p.getNome().length() >=1 && Character.isLetter(c) == true) {
+                         System.out.println("if diferente de null");
+                     
+                          a+="Nome: "+p.getNome()+"\n";
+                          break; 
+                      }
+                  else
+                  {
+                       JOptionPane.showMessageDialog(null,"digite novamente");
+                  }  
+               }
+               } catch (Exception e) {
+                System.out.println("ERRO try catch");
+            }
+         
+            while (true) {                
+                
+            
+           p.setCpf(JOptionPane.showInputDialog(null,"digite o cpf")); 
+           
+           cpf.isCPF(p.getCpf());
+           
+           
+        //   cpf.imprimeCPF(p.getCpf());
+           if (ValidaCPF.isCPF(p.getCpf()) == true){
+              
+            System.out.printf("%s\n", ValidaCPF.imprimeCPF(p.getCpf()));
+            a+="CPF: "+p.getCpf()+"\n";
+            break;}
+               else { System.out.printf("Erro, CPF invalido !!!\n");
+           }
+          
+           
+           
+               }
+            a+="--------------------------"+"\n";
+        }
+           // System.out.println(a);
+            
+            //iniicio CPF
+            JOptionPane.showMessageDialog(null,a);
+            
+            
+                 }
+        
+      
+   
+    }
+
