@@ -1,0 +1,2 @@
+numinicial (random%(numfinal + numinicial));
+
